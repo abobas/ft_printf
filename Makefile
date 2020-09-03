@@ -6,13 +6,15 @@
 #    By: abobas <abobas@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/04/29 01:21:19 by abobas        #+#    #+#                  #
-#    Updated: 2020/04/29 01:21:19 by abobas        ########   odam.nl          #
+#    Updated: 2020/09/03 21:09:55 by abobas        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = 		libftprintf.a
 
-OBJ = 		printf.o \
+SRC_DIR	=	./src/
+
+SRC = 		printf.o \
 			printf_struct.o \
 			printf_read_1.o \
 			printf_read_2.o \
@@ -31,18 +33,20 @@ OBJ = 		printf.o \
 			printf_utility_2.o \
 			printf_utility_3.o
 
-HEADER = 	printf.h
+SRC :=		$(SRC:%=$(SRC_DIR)%)
+
+HEADER = 	src/printf.h
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(HEADER)
-	ar rcs -o $(NAME) $(OBJ)
+$(NAME): $(SRC) $(HEADER)
+	ar rcs $(NAME) $(SRC)
 
 %.o: %.c $(HEADER)
 	gcc -c -Wall -Wextra -Werror -o $@ $<
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(SRC)
 
 fclean: clean
 	rm -f $(NAME)
