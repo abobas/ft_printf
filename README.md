@@ -1,8 +1,9 @@
-# ft_printf
+# printf
 
-Project for Codam (42 Network)
+## Project
 
-- Assignment: reimplementing printf of the C Standard Library. 
-- Notes: The 'cspdiuxX%' conversions and '-0.*' flags have to be supported
-- Grade: 100%
-- Date: 28 December 2019
+This is a project for Codam (42 Network). <br>
+The assignment consisted of reimplementing printf of the C Standard Library. <br>
+This printf supports `cspdiuxX%` conversions and `-0.*` flags. <br>
+
+I finished the project on 28/12/2019 with a grade of 100%.
